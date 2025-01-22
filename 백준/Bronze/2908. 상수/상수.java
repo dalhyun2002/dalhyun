@@ -1,14 +1,13 @@
 import java.util.*;
 import java.io.*;
 public class Main {
-    public static void main(String[] args){
-      Scanner sc=new Scanner(System.in);
-      String[] s=sc.nextLine().split(" ");
+    public static void main(String[] args)throws IOException{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st=new StringTokenizer(br.readLine());
 
-    int a=Integer.parseInt(new StringBuilder().append(s[0]).reverse().toString());
-    int b=Integer.parseInt(new StringBuilder().append(s[1]).reverse().toString());
+        int a=Integer.parseInt(new StringBuilder().append(st.nextToken()).reverse().toString());
+        int b=Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
 
-    System.out.println(a>b?a:b);
-
+        System.out.print(a>b?a:b);
     }
 }
