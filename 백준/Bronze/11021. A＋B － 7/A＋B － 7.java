@@ -8,12 +8,12 @@ public class Main {
 
         for(int i=1;i<=num;i++){
             String str=br.readLine();
-            int target=str.indexOf(" ");
-            int a=Integer.parseInt(str.substring(0,target));
-            int b=Integer.parseInt(str.substring(target+1));
-            sb.append("Case #"+i+": ").append(a+b+"\n");
+            int a=str.charAt(0)-'0';
+            int b=str.charAt(2)-'0';
+            sb.append("Case #").append(i).append(": ").append(a+b).append("\n");
         }
-        br.close();
         System.out.print(sb);
+        br.close();
+
     }
 }
