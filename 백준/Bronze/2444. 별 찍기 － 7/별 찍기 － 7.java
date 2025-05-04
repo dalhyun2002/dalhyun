@@ -1,19 +1,28 @@
-import java.util.*;
-import java.io.*;
-public class Main {
-    public static void main(String[] args){
-     Scanner sc=new Scanner(System.in);
-     int num=sc.nextInt();
-     for(int i=1;i<=num*2-1;i++){
-         int a=num-i;
-         a=(a<0?-a:a);
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
-         for(int k=0;k<a;k++)
-             System.out.print(" ");
-         for(int k=0;k<num*2-1-(a*2);k++)
-             System.out.print("*");
-         if(i!=num*2-1)
-             System.out.println();
-     }
+public class Main {
+    public static void main(String[] args) throws IOException{
+       BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+       StringBuilder sb=new StringBuilder();
+       int a=Integer.parseInt(br.readLine());
+
+       for(int i=1;i<=a;i++){
+           for(int j=1;j<=a-i;j++)
+               sb.append(" ");
+           for(int j=1;j<=2*i-1;j++)
+               sb.append("*");
+           sb.append("\n");
+       }
+       for(int i=a-1;i>=1;i--){
+           for(int j=1;j<=a-i;j++)
+               sb.append(" ");
+           for(int j=1;j<=2*i-1;j++)
+               sb.append("*");
+           sb.append("\n");
+       }
+       System.out.print(sb);
     }
 }
